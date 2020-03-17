@@ -1,0 +1,8 @@
+digraph "Graphe hiérarchique des classes"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="8",labelfontname="Helvetica",labelfontsize="8"];
+  node [fontname="Helvetica",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="flot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classflot.xhtml",tooltip="Interface associee a un flot de donnees reliant deux composants du systeme. "];
+}

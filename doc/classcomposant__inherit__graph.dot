@@ -1,0 +1,18 @@
+digraph "composant"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="8",labelfontname="Helvetica",labelfontsize="8"];
+  node [fontname="Helvetica",fontsize="8",shape=record];
+  Node1 [label="{composant\n||+ ~composant()\l+ calculer()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{consommateur\n||+ ~consommateur()\l+ nbEntrees()\l+ getEntree()\l+ connecterEntree()\l+ yaDesEchantillons()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classconsommateur.xhtml",tooltip="Interface d&#39;un consommateur d&#39;échantillons sonores. Il s&#39;agit d&#39;une interface décrivant un composant ..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{enregistreur_fichier\n||+ enregistreur_fichier()\l+ ~enregistreur_fichier()\l+ nbEntrees()\l+ getEntree()\l+ connecterEntree()\l+ yaDesEchantillons()\l+ calculer()\l# getNomFichier()\l# getStream()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classenregistreur__fichier.xhtml",tooltip="Un consommateur qui enregistre ses entrées dans un fichier binaire ; 44100 Hz, 16bits signé..."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{enregistreur_fichier\l_texte\n||+ enregistreur_fichier\l_texte()\l+ ~enregistreur_fichier\l_texte()\l+ nbEntrees()\l+ getEntree()\l+ connecterEntree()\l+ yaDesEchantillons()\l+ calculer()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classenregistreur__fichier__texte.xhtml",tooltip="Un consommateur qui enregistre ses entrées dans un fichier texte ; une ligne = un échantillon de chaq..."];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{filtre\n||+ ~filtre()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfiltre.xhtml",tooltip="Interface associée à un filtre sonore. Ce filtre est considéré comme un producteur / consommateur d&#39;é..."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{producteur\n||+ ~producteur()\l+ nbSorties()\l+ getSortie()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classproducteur.xhtml",tooltip="Interface d&#39;un producteur d&#39;échantillons sonores. Il s&#39;agit d&#39;une interface décrivant un composant ne..."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",arrowtail="onormal",fontname="Helvetica"];
+}

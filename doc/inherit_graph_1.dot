@@ -1,0 +1,10 @@
+digraph "Graphe hiérarchique des classes"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="8",labelfontname="Helvetica",labelfontsize="8"];
+  node [fontname="Helvetica",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="std::exception",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class. "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="Helvetica"];
+  Node2 [label="composant_exception",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcomposant__exception.xhtml",tooltip="classe qui gère les exceptions liées à un composant "];
+}
