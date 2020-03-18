@@ -4,15 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/imp_flot.cpp \
 ../src/main.cpp \
+../src/producteurbase.cpp \
 ../src/signal_constant.cpp 
 
 OBJS += \
+./src/imp_flot.o \
 ./src/main.o \
+./src/producteurbase.o \
 ./src/signal_constant.o 
 
 CPP_DEPS += \
+./src/imp_flot.d \
 ./src/main.d \
+./src/producteurbase.d \
 ./src/signal_constant.d 
 
 
