@@ -4,16 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../include/imp_flot.cpp \
-../include/signal_constant.cpp 
+../include/imp_flot.cpp 
 
 OBJS += \
-./include/imp_flot.o \
-./include/signal_constant.o 
+./include/imp_flot.o 
 
 CPP_DEPS += \
-./include/imp_flot.d \
-./include/signal_constant.d 
+./include/imp_flot.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
