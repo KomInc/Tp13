@@ -45,7 +45,7 @@ all: tp13
 tp13: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L/home/inc/prog/tp13/include/lib/ -o "tp13" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/home/inc/prog/tp13/lib/ -o "tp13" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

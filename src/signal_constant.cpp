@@ -7,6 +7,7 @@
 
 #include <signal_constant.h>
 #include "imp_flot.h"
+#include <cassert>
 
 signal_constant::signal_constant(double sc) : m_sc(sc), m_sortie(new imp_flot()) {
 	// TODO Auto-generated constructor stub
@@ -18,8 +19,7 @@ unsigned int signal_constant::nbSorties() const{
 
 }
 const std::shared_ptr<flot> & signal_constant::getSortie(unsigned int numsortie) const{
-	//std::shared_ptr<imp_flot> *flot_tmp = new std::shared_ptr<flot>();
-	//m_->insert(m_sc);
+	assert((0 <= numsortie) && (numsortie < nbSorties()));
 
 	return m_sortie;
 }
