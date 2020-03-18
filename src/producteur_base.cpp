@@ -18,24 +18,13 @@ unsigned int producteur_base::nbSorties() const{
 }
 const std::shared_ptr<flot> & producteur_base::getSortie(unsigned int numsortie) const{
 	assert((0 <= numsortie) && (numsortie < nbSorties()));
-	std::set<std::shared_ptr<flot>>::const_iterator it = m_lesSorties.begin();
-	unsigned int i(0);
-	while (i < numsortie){
-		++it;
-		++i;
-	}
-	return *(it);
+
+	return m_lesSorties[numsortie];
 }
 
 void producteur_base::connecterSortie(std::shared_ptr<flot> const sortie, unsigned int numsortie){
 	assert((0 <= numsortie) && (numsortie < nbSorties()));
-	std::set<std::shared_ptr<flot>>::iterator it = m_lesSorties.begin();
-	unsigned int i(0);
-	while (i < numsortie){
-		++it;
-		++i;
-	}
-	m_lesSorties.insert(it,sortie);
+	m_lesSorties[numsortie] = sortie;
 }
 
 producteur_base::~producteur_base() {

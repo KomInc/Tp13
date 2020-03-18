@@ -9,11 +9,11 @@
 #define INCLUDE_PRODUCTEUR_BASE_H_
 
 #include "producteur.h"
-#include <set>
+#include <vector>
 
 class producteur_base : virtual producteur {
 protected:
-	std::set<std::shared_ptr<flot>> m_lesSorties;
+	std::vector<std::shared_ptr<flot>> m_lesSorties;
 public:
 	producteur_base();
 	virtual unsigned int nbSorties() const;
