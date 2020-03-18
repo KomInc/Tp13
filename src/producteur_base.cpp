@@ -27,7 +27,16 @@ const std::shared_ptr<flot> & producteur_base::getSortie(unsigned int numsortie)
 	return *(it);
 }
 
-
+void producteur_base::connecterSortie(std::shared_ptr<flot> const sortie, unsigned int numsortie){
+	assert((0 <= numsortie) && (numsortie < nbSorties()));
+	std::set<std::shared_ptr<flot>>::iterator it = m_lesSorties.begin();
+	unsigned int i(0);
+	while (i < numsortie){
+		++it;
+		++i;
+	}
+	m_lesSorties.insert(it,sortie);
+}
 
 producteur_base::~producteur_base() {
 	// TODO Auto-generated destructor stub

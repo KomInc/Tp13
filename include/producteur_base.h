@@ -12,7 +12,7 @@
 #include <set>
 
 class producteur_base : virtual producteur {
-private:
+protected:
 	std::set<std::shared_ptr<flot>> m_lesSorties;
 public:
 	producteur_base();
@@ -22,7 +22,7 @@ public:
 	virtual ~producteur_base();
 
 protected:
-	virtual void connecterSortie() = 0;
+	virtual void connecterSortie(std::shared_ptr<flot> sortie, unsigned int numsortie);
 };
 
 #endif /* INCLUDE_PRODUCTEUR_BASE_H_ */
