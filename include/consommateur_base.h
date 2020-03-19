@@ -10,10 +10,10 @@
 #include "consommateur.h"
 #include <vector>
 class consommateur_base: virtual consommateur {
-private:
+protected:
 	std::vector<std::shared_ptr<flot>> m_lesEntrees;
 public:
-	consommateur_base();
+	consommateur_base(unsigned int nbEntrees = 1);
 	virtual ~consommateur_base();
 	unsigned int nbEntrees() const;
 	const std::shared_ptr<flot>& getEntree(unsigned int numentree) const;

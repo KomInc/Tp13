@@ -7,9 +7,14 @@
 
 #include "consommateur_base.h"
 #include <cassert>
-consommateur_base::consommateur_base() {
-    // TODO Auto-generated constructor stub
+#include "imp_flot.h"
 
+consommateur_base::consommateur_base(unsigned int nbEntrees) {
+    // TODO Auto-generated constructor stub
+	for(unsigned int i(0); i<nbEntrees;i++){
+		std::shared_ptr<flot> ptr(new imp_flot());
+		m_lesEntrees.push_back(ptr);
+	}
 }
 
 unsigned int consommateur_base::nbEntrees() const {

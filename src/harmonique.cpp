@@ -10,14 +10,15 @@
 #include <iostream>
 #include "imp_flot.h"
 
-harmonique::harmonique(unsigned int const frequence, double const dephasage) :m_in(0), m_frequence(frequence) , m_dephasage(dephasage), m_sortie(new imp_flot()){
+harmonique::harmonique(unsigned int const frequence, double const dephasage) : producteur_base(1),
+		m_in(0), m_frequence(frequence), m_dephasage(dephasage) {
 	// TODO Auto-generated constructor stub
-	m_lesSorties.push_back(m_sortie);
+
 }
 
-void harmonique::calculer(){
-	m_sortie->inserer(calculerH(m_in));
-	m_in ++;
+void harmonique::calculer() {
+	m_lesSorties[0]->inserer(calculerH(m_in));
+	m_in++;
 }
 
 harmonique::~harmonique() {
@@ -25,10 +26,11 @@ harmonique::~harmonique() {
 }
 double harmonique::calculerH(unsigned int indice) {
 	return std::sin(
-			((float)indice / MixageSonore::frequency) * 2 * MixageSonore::pi
+			((float) indice / MixageSonore::frequency) * 2 * MixageSonore::pi
 					* m_frequence + m_dephasage);
 }
 
-const std::shared_ptr<flot> & harmonique::getSortie(unsigned int numsortie) const{
+const std::shared_ptr<flot> & harmonique::getSortie(
+		unsigned int numsortie) const {
 	return m_lesSorties[numsortie];
 }

@@ -16,7 +16,6 @@ private:
 	int m_in;
 	unsigned int m_frequence;
 	double m_dephasage;
-	std::shared_ptr<flot> m_sortie;
 
 public:
 	harmonique(unsigned int const frequence, double const dephasage = 0);
