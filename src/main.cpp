@@ -6,7 +6,7 @@
  */
 
 #include "constantes.h"
-#include "enregistreur_fichier.h"
+#include "enregistreur_fichier_wav.h"
 #include "enregistreur_fichier_texte.h"
 #include "harmonique.h"
 #include "signal_constant.h"
@@ -28,7 +28,7 @@ void
 q4_harmonique()
 {
   harmonique la440(440); // la 440Hz (voir fr.wikipedia.org/wiki/Note_de_musique)
-  enregistreur_fichier enregistreur("04_harmonique.raw", 1);	// fichier mono
+  enregistreur_fichier_wav enregistreur("04_harmonique.wav", 1);	// fichier mono
   enregistreur.connecterEntree(la440.getSortie(0), 0);
   // produire 2 secondes de son
   for (unsigned long int i = 0; i < 2 * MixageSonore::frequency; ++i) {

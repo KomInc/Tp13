@@ -1,5 +1,6 @@
 src/main.o: ../src/main.cpp \
  /home/inc/prog/tp13/share/include/constantes.h \
+ /home/inc/prog/tp13/share/include/enregistreur_fichier_wav.h \
  /home/inc/prog/tp13/share/include/enregistreur_fichier.h \
  /home/inc/prog/tp13/share/include/consommateur.h \
  /home/inc/prog/tp13/share/include/composant.h \
@@ -12,6 +13,8 @@ src/main.o: ../src/main.cpp \
  /home/inc/prog/tp13/include/signal_constant.h
 
 /home/inc/prog/tp13/share/include/constantes.h:
+
+/home/inc/prog/tp13/share/include/enregistreur_fichier_wav.h:
 
 /home/inc/prog/tp13/share/include/enregistreur_fichier.h:
 

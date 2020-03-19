@@ -25,7 +25,7 @@ harmonique::~harmonique() {
 }
 double harmonique::calculerH(unsigned int indice) {
 	return std::sin(
-			(indice / MixageSonore::frequency) * 2 * MixageSonore::pi
+			((float)indice / MixageSonore::frequency) * 2 * MixageSonore::pi
 					* m_frequence + m_dephasage);
 }
 
