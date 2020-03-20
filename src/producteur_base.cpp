@@ -26,9 +26,9 @@ const std::shared_ptr<flot> & producteur_base::getSortie(unsigned int numsortie)
 	return m_lesSorties[numsortie];
 }
 
-void producteur_base::connecterSortie(std::shared_ptr<flot>  sortie, unsigned int numsortie){
+void producteur_base::connecterSortie(const std::shared_ptr<flot> & sortie, unsigned int numsortie){
 	assert((0 <= numsortie) && (numsortie < nbSorties()));
-	sortie = m_lesSorties[numsortie];
+	m_lesSorties[numsortie] = sortie;
 }
 
 producteur_base::~producteur_base() {

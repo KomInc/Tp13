@@ -12,6 +12,11 @@ filtre_base::filtre_base(unsigned int nbSorties, unsigned int nbEntrees) :consom
 
 }
 
+//const std::shared_ptr<flot> & filtre_base::getSortie(unsigned int numsortie) const{
+//
+//	return getEntree(numsortie);
+//}
+
 filtre_base::~filtre_base() {
 	// TODO Auto-generated destructor stub
 }

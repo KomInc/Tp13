@@ -14,8 +14,8 @@ class multiplicateur : public filtre_base {
 public:
 	multiplicateur();
 	virtual ~multiplicateur();
-	//virtual void calculer();
-	void connecter();
+	virtual void calculer();
+	//void connecter();
 };
 
 #endif /* INCLUDE_MULTIPLICATEUR_H_ */

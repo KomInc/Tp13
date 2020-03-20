@@ -9,7 +9,7 @@
 #define SRC_CONSOMMATEUR_BASE_H_
 #include "consommateur.h"
 #include <vector>
-class consommateur_base: virtual consommateur {
+class consommateur_base:public virtual consommateur {
 protected:
 	std::vector<std::shared_ptr<flot>> m_lesEntrees;
 public:

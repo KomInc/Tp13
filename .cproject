@@ -110,6 +110,12 @@
                         </toolChain>
                         					
                     </folderInfo>
+                    					
+                    <sourceEntries>
+                        						
+                        <entry excluding="src/operateur_binaire.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        					
+                    </sourceEntries>
                     				
                 </configuration>
                 			
@@ -200,6 +206,12 @@
                         </toolChain>
                         					
                     </folderInfo>
+                    					
+                    <sourceEntries>
+                        						
+                        <entry excluding="src/operateur_binaire.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        					
+                    </sourceEntries>
                     				
                 </configuration>
                 			

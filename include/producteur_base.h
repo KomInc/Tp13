@@ -11,7 +11,7 @@
 #include "producteur.h"
 #include <vector>
 
-class producteur_base : virtual producteur {
+class producteur_base :public virtual producteur {
 protected:
 	std::vector<std::shared_ptr<flot>> m_lesSorties;
 
@@ -24,8 +24,8 @@ public:
 
 
 
-protected:
-	virtual void connecterSortie(std::shared_ptr<flot>  sortie, unsigned int numsortie);
+//protected:
+	virtual void connecterSortie(const std::shared_ptr<flot> & sortie, unsigned int numsortie);
 };
 
 #endif /* INCLUDE_PRODUCTEUR_BASE_H_ */
