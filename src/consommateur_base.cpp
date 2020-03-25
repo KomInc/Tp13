@@ -9,19 +9,24 @@
 #include <cassert>
 #include "imp_flot.h"
 
-consommateur_base::consommateur_base(unsigned int nbEntrees) {
+consommateur_base::consommateur_base(unsigned int nbEntrees) : m_lesEntrees(nbEntrees){
     // TODO Auto-generated constructor stub
-	for(unsigned int i(0); i<nbEntrees;i++){
+	/*for(unsigned int i(0); i<nbEntrees;i++){
 		std::shared_ptr<flot> ptr(new imp_flot());
 		m_lesEntrees.push_back(ptr);
-	}
+	}*/
 }
 
 unsigned int consommateur_base::nbEntrees() const {
     return m_lesEntrees.size();
 }
 bool consommateur_base::yaDesEchantillons() const {
-    return m_lesEntrees.size() > 0;
+	    for (int i=0;i<nbEntrees();i++){
+	        if(m_lesEntrees[i]->vide()){
+	            return false;
+	        }
+	    }
+	    return true;
 }
 consommateur_base::~consommateur_base() {
     // TODO Auto-generated destructor stub

@@ -12,6 +12,7 @@
 #include "signal_constant.h"
 #include "multiplicateur.h"
 #include "operation_binaire.h"
+#include "volume.h"
 
 void
 q2_signal_constant()
@@ -48,10 +49,10 @@ void q9_multiplicateur(){
 	  }
 
 	  multiplicateur la;
-	  la.connecterSortie(la440.getSortie(0), 0);
-	  la.connecterSortie(la880.getSortie(0), 1);
+	  la.connecterEntree(la440.getSortie(0), 0);
+	  la.connecterEntree(la880.getSortie(0), 1);
 	  enregistreur_fichier_wav enregistreur("09_multiplicateur.wav", 1);
-	  enregistreur.connecterEntree(la.getEntree(0), 0);
+	  enregistreur.connecterEntree(la.getSortie(0), 0);
 	  for (unsigned long int i = 0; i < 2 * MixageSonore::frequency; ++i) {
 		  la.calculer();
 		  enregistreur.calculer();
@@ -67,16 +68,31 @@ void q11_operation_binaire(){
 	  }
 
 	  operation_binaire<std::multiplies<double>> la;
-	  la.connecterSortie(la440.getSortie(0), 0);
-	  la.connecterSortie(la880.getSortie(0), 1);
+	  la.connecterEntree(la440.getSortie(0), 0);
+	  la.connecterEntree(la880.getSortie(0), 1);
 	  enregistreur_fichier_wav enregistreur("11_operation_binaire.wav", 1);
-	  enregistreur.connecterEntree(la.getEntree(0), 0);
+	  enregistreur.connecterEntree(la.getSortie(0), 0);
 	  for (unsigned long int i = 0; i < 2 * MixageSonore::frequency; ++i) {
 		  la.calculer();
 		  enregistreur.calculer();
 	  }
 }
 
+void q12_volume(){
+     harmonique la440(440);
+	  for (unsigned long int i = 0; i < 2 * MixageSonore::frequency; ++i) {
+		  la440.calculer();
+	  }
+
+     volume test(0.5);
+     test.connecterEntree(la440.getSortie(0), 0);
+     enregistreur_fichier_wav enregistreur("12_volume.wav", 1);
+     enregistreur.connecterEntree(test.getSortie(0), 0);
+     for (unsigned long int i = 0; i < 2 * MixageSonore::frequency; ++i) {
+               test.calculer();
+               enregistreur.calculer();
+           }
+}
 
 int
 main()
@@ -84,6 +100,7 @@ main()
   //q2_signal_constant();
     //q4_harmonique();
 	//q9_multiplicateur();
-	q11_operation_binaire();
+	//q11_operation_binaire();
+	q12_volume();
   return 0;
 }
